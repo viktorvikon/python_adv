@@ -13,6 +13,6 @@ country_capital = {
 
 list_country = ['Австрия', 'Албания', 'Болгария', 'Ватикан', 'Греция', 'Казахстан']
 
-for i in country_capital:
-    if i in list_country:
-        print(country_capital[i])
+for k in country_capital:
+    if k in list_country:
+        print(country_capital[k])
