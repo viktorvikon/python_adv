@@ -28,6 +28,7 @@ SELECT_NUM = "Выберите действие, указав соответст
 INCORRECT_DATA = "Некорректные данные. Пожалуйста, попробуйте еще раз! "
 INCORRECT_CHOICE = "Некорректные данные. Пожалуйста, попробуйте еще раз! "
 NOT_USERS = "Нет зарегистрированных пользователей"
+INCORRECT_INPUT = "Неправильный логин или пароль"
 
 
 class DataBase:
@@ -125,6 +126,14 @@ class User(DataBase):
             else:
                 return False
 
+    def is_user(self):
+        for login, data in self.get_users.items():
+            for password in data.values():
+                if (self._login, self._password) == (login, password):
+                    return True
+                else:
+                    return INCORRECT_INPUT
+
     @property
     def get_login(self):
         return self._login
@@ -210,7 +219,7 @@ def main():
                                 break
                             else:
                                 print(INCORRECT_CHOICE)
-                else:
+                if user.is_user() is True:
                     while True:
                         print(USER_PAGE)
                         user_choice = input(SELECT_NUM)
