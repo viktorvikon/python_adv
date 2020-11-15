@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <style>
+    div {
+      display: flex;
+      flex-flow: row wrap;
+    }
+    </style>
+</head>
+<body>
+    <h1>CATEGORIES</h1>
+    <div>
+    {% for category in categories %}
+    <p style="width: 20%"> <a href="{{category}}"> {{category}} </a> </p>
+    {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin main page</title>
+    <style>
+        .button {
+              border: none;
+              color: white;
+              padding: 15px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              margin: 4px 2px;
+              cursor: pointer;
+              background-color: grey;
+              width: 260px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Панель администратора</h1><br>
+    <form id="add_category" action="/admin/category" method="get">
+        <button type="submit" class="button">Добавить категорию</button><br>
+    </form>
+    <form id="add_product" action="/admin/product" method="get">
+        <button type="submit" class="button">Добавить продуке</button><br>
+    </form>
+</body>
+</html>

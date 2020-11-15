@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin add new product</title>
+</head>
+<body>
+
+    <h2>Добавить продукт</h2>
+        <form action="/admin/product" method="post">
+          <label for="pr_name">Имя продукта:</label><br>
+          <input type="text" id="pr_name" name="pr_name"><br><br>
+          <label for="categ_name">Выберите категорию:</label><br>
+          <select id="categ_name" name="categ_name">
+              {% for category in categories %}
+                <option value={{category}}>{{category}}</option>
+              {% endfor %}
+          </select>
+          <br><br><label for="pr_price">Укажите цену:</label><br>
+          <input type="number" id="pr_price" name="pr_price"><br><br>
+          <label for="pr_qty">Укажите количество:</label><br>
+          <input type="number" id="pr_qty" name="pr_qty"><br><br>
+
+          <input type="submit" value="Submit">
+        </form>
+</body>
+</html>
